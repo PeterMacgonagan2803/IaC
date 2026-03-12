@@ -36,10 +36,10 @@ resource "docker_container" "nginx" {
 }
 
 resource "docker_container" "client" {
-  name     = "client"
-  image    = "appropriate/curl:latest"
+  name       = "client"
+  image      = "appropriate/curl:latest"
   entrypoint = ["/bin/sh", "-c"]
-  command  = ["curl -s http://nginx:80 && sleep infinity"]
+  command    = ["sleep 5; curl -s http://nginx:80; exec tail -f /dev/null"]
 
   networks_advanced {
     name = docker_network.app_network.name
