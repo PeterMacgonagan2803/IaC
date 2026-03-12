@@ -1,0 +1,17 @@
+# Exemple de valeur pour la variable machines
+# Copier en terraform.tfvars
+
+machines = [
+  {
+    name      = "web-1"
+    vcpu      = 4
+    disk_size = 50
+    region    = "eu-west-1"
+  },
+  {
+    name      = "api-1"
+    vcpu      = 2
+    disk_size = 20
+    region    = "us-east-1"
+  }
+]
